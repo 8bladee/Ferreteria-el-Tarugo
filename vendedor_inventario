@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style/styles.css">
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
     <header>
         <img src="img/logo.png" alt="Logo de la ferreteria" class="logo">
@@ -33,4 +35,5 @@
         <p class="footer-text">© Ferreteria el Tarugo - 2026</p>
     </footer>
 </body>
+
 </html>
