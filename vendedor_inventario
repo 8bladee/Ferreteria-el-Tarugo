@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendedor - Inventario</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo de la ferreteria" class="logo">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catalogo</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="pedidos.html">Mis Pedidos</a>
+            <a href="cuenta.html">Cuenta</a>
+            <a href="Vendedor.html">Vendedor</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gestión de Inventario</h1>
+        <section class="container">
+            <p>Aquí puedes revisar y actualizar el stock de los productos.</p>
+            <!-- Aquí iría la interfaz de gestión de inventario del vendedor -->
+        </section>
+    </main>
+
+    <footer>
+        <a href="contacto.html" class="footer-link">Contacto</a>
+        <p class="footer-text">© Ferreteria el Tarugo - 2026</p>
+    </footer>
+</body>
+</html>
