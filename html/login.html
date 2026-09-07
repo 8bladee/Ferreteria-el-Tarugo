@@ -5,48 +5,54 @@
   <meta charset="UTF-8">
   <title>Iniciar Sesion - Ferreteria el Tarugo</title>
   <link rel="stylesheet" href="../style/styles.css">
-  <script href="../js/script.js" defer></script>
+  <script src="../js/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- menu de navegacion -->
-  <div class="nav">
-    <a href="index.html">Inicio</a>
-    <a href="catalogo.html">Catalogo</a>
-    <a href="carrito.html">Carrito</a>
-    <a href="pedidos.html">Mis Pedidos</a>
-    <a href="cuenta.html">Cuenta</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html">Iniciar Sesion</a>
-    <a href="registro.html">Registrarse</a>
-  </div>
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catalogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="pedidos.html">Mis Pedidos</a>
+      <a href="cuenta.html">Cuenta</a>
+      <a href="login.html">Iniciar Sesion</a>
+      <a href="registro.html">Registrarse</a>
+    </nav>
+  </header>
+  <main>
 
-  <h1>Iniciar Sesion</h1>
+    <h1>Iniciar Sesion</h1>
 
-  <div class="container">
+    <section class="container">
 
-    <p>Ingresa con tu correo y contraseña. Sirve tanto para clientes, vendedores
-      y el administrador (por ahora es la misma pantalla para todos).</p>
+      <p>Ingresa con tu correo y contraseña. Sirve tanto para clientes, vendedores
+        y el administrador (por ahora es la misma pantalla para todos).</p>
 
-    <form>
+      <form>
 
-      <label for="correo">Correo electronico:</label>
-      <input type="text" id="correo" name="correo" placeholder="ejemplo@correo.com">
+        <label for="correo">Correo electronico:</label>
+        <input type="text" id="correo" name="correo" placeholder="ejemplo@correo.com">
 
-      <label for="clave">Contraseña:</label>
-      <input type="password" id="clave" name="clave">
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave">
+
+        <br>
+        <button type="submit">Entrar</button>
+
+      </form>
 
       <br>
-      <button type="submit">Entrar</button>
+      <p>No tienes cuenta todavia? <a href="registro.html">Registrate aqui</a></p>
 
-    </form>
-
-    <br>
-    <p>No tienes cuenta todavia? <a href="registro.html">Registrate aqui</a></p>
-
-  </div>
-
+    </section>
+  </main>
+  <footer>
+    <a href="contacto.html" class="footer-link">Contacto</a>
+    <a href="Admin.html" class="footer-link">Admin</a>
+    <p class="footer-text">© Ferreteria Los Maestros - 2026</p>
+  </footer>
 </body>
 
 </html>

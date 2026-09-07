@@ -3,80 +3,84 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Cuenta Corriente - Ferreteria el Tarugo</title>
+  <title>Cuenta Corriente - Ferreteria Los Maestros</title>
   <link rel="stylesheet" href="../style/styles.css">
-  <script href="../js/script.js" defer></script>
+  <script src="../js/script.js" defer></script>
 </head>
 
 <body>
 
-  <!-- menu de navegacion -->
-  <div class="nav">
-    <a href="index.html">Inicio</a>
-    <a href="catalogo.html">Catalogo</a>
-    <a href="carrito.html">Carrito</a>
-    <a href="pedidos.html">Mis Pedidos</a>
-    <a href="cuenta.html">Cuenta</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html">Iniciar Sesion</a>
-    <a href="registro.html">Registrarse</a>
-  </div>
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catalogo</a>
+      <a href="carrito.html">Carrito</a>
+      <a href="pedidos.html">Mis Pedidos</a>
+      <a href="cuenta.html">Cuenta</a>
+      <a href="login.html">Iniciar Sesion</a>
+      <a href="registro.html">Registrarse</a>
+    </nav>
+  </header>
 
-  <h1>Mi Cuenta</h1>
+  <main>
+    <section class="container">
+      <h1>Mi Cuenta</h1>
 
-  <div class="container">
+      <p><b>Saldo pendiente:</b> $68.670</p>
+      <p><b>Proxima fecha de corte:</b> 30-09-2026</p>
+      <p><b>Estado de la cuenta:</b> Aprobada</p>
 
-    <p><b>Saldo pendiente:</b> $68.670</p>
-    <p><b>Proxima fecha de corte:</b> 30-09-2026</p>
-    <p><b>Estado de la cuenta:</b> Aprobada</p>
+      <hr>
 
-    <hr>
+      <h2>Historial de Movimientos</h2>
 
-    <h2>Historial de Movimientos</h2>
+      <table>
+        <tr>
+          <th>Fecha</th>
+          <th>Documento</th>
+          <th>Detalle</th>
+          <th>Tipo</th>
+          <th>Monto</th>
+        </tr>
+        <tr>
+          <td>03-08-2026</td>
+          <td>Pedido #0987</td>
+          <td>Cemento, ripio, arena</td>
+          <td>Cargo</td>
+          <td>+$64.900</td>
+        </tr>
+        <tr>
+          <td>11-08-2026</td>
+          <td>Pedido #1002</td>
+          <td>Herramientas manuales</td>
+          <td>Cargo</td>
+          <td>+$38.900</td>
+        </tr>
+        <tr>
+          <td>31-08-2026</td>
+          <td>Pago recibido</td>
+          <td>Transferencia fin de mes</td>
+          <td>Abono</td>
+          <td>-$70.000</td>
+        </tr>
+        <tr>
+          <td>02-09-2026</td>
+          <td>Pedido #1058</td>
+          <td>Cemento, tornilleria</td>
+          <td>Cargo</td>
+          <td>+$34.870</td>
+        </tr>
+      </table>
+      <hr>
+      <p><i>Esta informacion es confidencial, solo la puede ver el cliente y el administrador.</i></p>
+    </section>
+  </main>
 
-    <table>
-      <tr>
-        <th>Fecha</th>
-        <th>Documento</th>
-        <th>Detalle</th>
-        <th>Tipo</th>
-        <th>Monto</th>
-      </tr>
-      <tr>
-        <td>03-08-2026</td>
-        <td>Pedido #0987</td>
-        <td>Cemento, ripio, arena</td>
-        <td>Cargo</td>
-        <td>+$64.900</td>
-      </tr>
-      <tr>
-        <td>11-08-2026</td>
-        <td>Pedido #1002</td>
-        <td>Herramientas manuales</td>
-        <td>Cargo</td>
-        <td>+$38.900</td>
-      </tr>
-      <tr>
-        <td>31-08-2026</td>
-        <td>Pago recibido</td>
-        <td>Transferencia fin de mes</td>
-        <td>Abono</td>
-        <td>-$70.000</td>
-      </tr>
-      <tr>
-        <td>02-09-2026</td>
-        <td>Pedido #1058</td>
-        <td>Cemento, tornilleria</td>
-        <td>Cargo</td>
-        <td>+$34.870</td>
-      </tr>
-    </table>
-
-    <hr>
-    <p><i>Esta informacion es confidencial, solo la puede ver el cliente y el administrador.</i></p>
-
-  </div>
-
+  <footer>
+    <a href="contacto.html" class="footer-link">Contacto</a>
+    <a href="Admin.html" class="footer-link">Admin</a>
+    <p class="footer-text">© Ferreteria Los Maestros - 2026</p>
+  </footer>
 </body>
 
 </html>
