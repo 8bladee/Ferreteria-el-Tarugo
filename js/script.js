@@ -45,13 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
     let nombreUsuario = localStorage.getItem('usuario_nombre') || '';
 
     // 2.2 Actualización dinámica del menú de navegación
-    const nav = document.querySelector('.nav');
+        // 2.2 Actualización dinámica del menú de navegación
+    const nav = document.querySelector('nav');
     if (nav) {
-        // Limpiar identificador previo si ya existía
+        // Limpiar elementos dinámicos previos (evita duplicados si el script corre de nuevo)
         const oldBadge = document.querySelector('.user-badge');
         if (oldBadge) oldBadge.remove();
+        const oldLinkVendedor = document.querySelector('.nav-link-vendedor');
+        if (oldLinkVendedor) oldLinkVendedor.remove();
 
-        // Si el usuario inició sesión, inyectar píldora con nombre, rol y botón de cierre
+        // 2.2a Mostrar el acceso a "Vendedor" solo si el rol corresponde.
+        // El Administrador también lo ve, porque tiene acceso total al sistema.
+        if (rolActual === 'Vendedor' || rolActual === 'Administrador') {
+            const linkVendedor = document.createElement('a');
+            linkVendedor.href = 'Vendedor.html';
+            linkVendedor.textContent = 'Vendedor';
+            linkVendedor.className = 'nav-link-vendedor';
+            nav.appendChild(linkVendedor);
+        }
+
+        // 2.2b Si el usuario inició sesión, inyectar píldora con nombre, rol y botón de cierre
         if (rolActual !== 'Invitado') {
             const badge = document.createElement('span');
             badge.className = 'user-badge';
@@ -248,7 +261,13 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem('usuario_nombre', valCorreo.split('@')[0]);
 
             mostrarToast(`¡Bienvenido! Rol: ${rolAsignado}`, '👷‍♂️');
-            setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+
+              // Redirección directa según el rol recién asignado
+            let destino = 'index.html';
+            if (rolAsignado === 'Administrador') destino = 'Admin.html';
+            else if (rolAsignado === 'Vendedor') destino = 'Vendedor.html';
+
+            setTimeout(() => { window.location.href = destino; }, 1200);
         });
     }
 
