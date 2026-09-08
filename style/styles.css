@@ -1,27 +1,26 @@
-/* 1. RESET Y VARIABLES DE COLOR CORPORATIVAS */
-:root {
-    --primary: #0f172a;        /* Azul marino profundo */
-    --primary-light: #1e293b;  /* Azul noche */
-    --accent: #ea580c;         /* Naranja construcción cálido */
-    --accent-hover: #c2410c;   /* Naranja oscuro para hover */
-    --accent-soft: #ffedd5;    /* Fondo naranja suave */
-    --bg-main: #f8fafc;        /* Fondo gris perla claro */
-    --bg-card: #ffffff;        /* Blanco puro */
-    --border-subtle: #e2e8f0;  /* Gris de borde sutil */
-    --text-title: #0f172a;     /* Títulos oscuros */
-    --text-body: #475569;      /* Texto de lectura */
-    --text-muted: #64748b;     /* Etiquetas y secundarios */
-    --success: #10b981;        /* Verde éxito */
-    --danger: #ef4444;         /* Rojo alertas y quitar */
-    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
-    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Roboto, Arial, sans-serif;
+}
+
+:root {
+    --primary: #0f172a;        
+    --primary-light: #1e293b;  
+    --accent: #ea580c;         
+    --accent-hover: #c2410c;   
+    --accent-soft: #ffedd5;   
+    --bg-main: #f8fafc;        
+    --bg-card: #ffffff;        
+    --border-subtle: #e2e8f0; 
+    --text-title: #0f172a;     
+    --text-body: #475569;     
+    --text-muted: #64748b;     
+    --success: #10b981;        
+    --danger: #ef4444;         
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
 }
 
 body {
@@ -31,9 +30,11 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+    background-image: url('../img/fondo-blanco.jpg');
+    background-repeat: repeat;
 }
 
-/* 2. NAVEGACIÓN PROFESIONAL (CONTRASTE AZUL NOCHE + NARANJA) */
+
 header {
     background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
     padding: 14px 24px;
@@ -64,7 +65,7 @@ nav a , .footer-link , .admin-links > li{
     transition: all 0.2s ease;
     letter-spacing: 0.02em;
 }
-/* EL EFECTO DE RESALTADO AL PASAR EL MOUSE DESDE INICIO HASTA REGISTARSE */
+
 nav a:hover {
     color: white;
     background-color: black;
@@ -75,7 +76,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-.footer-info p{
+.footer-info p, .footer-info h2 {
     margin-top: 12px;
     font-size: 13px;
     color: #e2e8f0;
@@ -91,7 +92,6 @@ footer {
     margin-top: auto;
 }
 
-/* Píldora de usuario en el menú */
 .user-badge {
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgb(35, 63, 95);
@@ -128,7 +128,6 @@ footer {
     color: white;
 }
 
-/* 3. ENCABEZADOS Y CONTENEDOR PRINCIPAL */
 h1 {
     text-align: center;
     color: black;
@@ -138,7 +137,7 @@ h1 {
     margin: 35px 20px 8px 20px;
 }
 
-h2 {
+main h2 {
     color: var(--primary-light);
     font-size: 1.25rem;
     font-weight: 700;
@@ -161,12 +160,17 @@ h2::before {
 .container {
     background-color: var(--bg-card);
     width: 90%;
-    max-width: 880px;
+    max-width: 60%;
     margin: 20px auto 60px auto;
     padding: 38px 44px;
     border-radius: 14px;
     border: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-md);
+}
+
+.catalog_img {
+    width: 100px;
+    height: auto;
 }
 
 p {
@@ -200,7 +204,6 @@ ul li {
     margin-bottom: 8px;
 }
 
-/* . TABLAS CON DETALLES DE COLOR */
 table {
     width: 100%;
     border-collapse: separate;
@@ -237,7 +240,6 @@ tr:hover td {
     background-color: #f8fafc;
 }
 
-/* Campos numéricos de cantidad en la tabla */
 table input[type="number"] {
     width: 65px;
     padding: 6px 10px;
@@ -255,7 +257,6 @@ table input[type="number"]:focus {
     background-color: #ffffff;
 }
 
-/*  5. BOTONES E INTERACCIONES */
 button, .btn {
     background-color: var(--accent);
     color: #ffffff;
@@ -285,7 +286,6 @@ button[disabled] {
     transform: none;
 }
 
-/* Botones de acción de ancho completo */
 .btn-primary, button[type="submit"] {
     background-color: var(--accent);
     width: 100%;
@@ -294,7 +294,6 @@ button[disabled] {
     margin-top: 15px;
 }
 
-/* Botón secundario o alternativo */
 .btn-secondary {
     background-color: var(--primary-light);
     box-shadow: 0 2px 6px rgba(30, 41, 59, 0.2);
@@ -304,7 +303,6 @@ button[disabled] {
     background-color: var(--primary);
 }
 
-/* Botón discreto de eliminar / quitar */
 button.btn-danger {
     background-color: #fef2f2;
     color: var(--danger);
@@ -320,7 +318,6 @@ button.btn-danger:hover {
     border-color: var(--danger);
 }
 
-/* 6. FORMULARIOS REFINADOS */
 form {
     display: flex;
     flex-direction: column;
@@ -355,7 +352,7 @@ textarea {
 input::placeholder, textarea::placeholder {
     color: #94a3b8;
 }
-/* El resplandor alrededor del campo */
+
 input:focus, select:focus, textarea:focus {
     border-color: var(--accent);
     outline: none;
@@ -368,14 +365,12 @@ input[type="radio"] {
     margin-top: 8px;
 }
 
-/* Alerta de validación visual */
 .campo-error {
     border-color: var(--danger);
     background-color: #fffafb;
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
-/* 7. MAPA*/
 iframe {
     width: 100%;
     max-width: 100%;
@@ -386,7 +381,6 @@ iframe {
     box-shadow: var(--shadow-sm);
 }
 
-/* 8. NOTIFICACIÓN TOAST MODERNA */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -419,7 +413,6 @@ iframe {
     transform: translateY(0);
 }
 
-/* 9. RESPONSIVE DESIGN*/
 @media (max-width: 768px) {
     .container {
         padding: 24px 20px;
@@ -443,3 +436,4 @@ iframe {
         padding: 6px 10px;
     }
 }
+
