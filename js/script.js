@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+    event.preventDefault();
     function mostrarToast(mensaje, icono = '🔔') {
         let container = document.querySelector('.toast-container');
         if (!container) {
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3000);
     }
 
-    let rolActual = localStorage.getItem('usuario_rol') || 'Invitado';
-    let nombreUsuario = localStorage.getItem('usuario_nombre') || '';
+    let rolActual = localStorage.getItem('usuario-rol') || 'Invitado';
+    let nombreUsuario = localStorage.getItem('usuario-nombre') || '';
 
     const nav = document.querySelector('nav');
     if (nav) {
@@ -172,33 +172,50 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes('login.html')) {
         formulario.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            const inputCorreo = document.querySelector('#correo');
-            const inputClave = document.querySelector('#clave');
+            const camposObligatorios = document.querySelectorAll("#form-login [required]");
             let hayError = false;
 
-            [inputCorreo, inputClave].forEach(campo => {
-                if (!campo.value.trim()) {
-                    campo.classList.add('campo-error');
+            camposObligatorios.forEach((campo) => {
+                if (campo.value.trim() === "") {
+                    campo.classList.add("campo-error");
                     hayError = true;
                 } else {
-                    campo.classList.remove('campo-error');
+                    campo.classList.remove("campo-error");
                 }
             });
+
+            const correo = document.querySelector("#correo");
+            const regularCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regularCorreo.test(correo.value)) {
+                correo.classList.add("campo-error");
+                mostrarToast('El correo no tiene un formato válido', '⚠️');
+                return;
+            } else {
+                correo.classList.remove("campo-error");
+            }
+
+            const inputClave = document.querySelector('#clave');
+            if (inputClave.value.length < 8) {
+                inputClave.classList.add("campo-error");
+                mostrarToast('La contraseña debe tener al menos 8 caracteres', '⚠️');
+                return;
+            } else {
+                inputClave.classList.remove("campo-error");
+            }
 
             if (hayError) {
                 mostrarToast('Por favor completa tus credenciales', '⚠️');
                 return;
             }
 
-            const valCorreo = inputCorreo.value.toLowerCase().trim();
+            const valCorreo = correo.value.toLowerCase().trim();
             let rolAsignado = 'Particular';
             if (valCorreo.includes('admin')) rolAsignado = 'Administrador';
             else if (valCorreo.includes('vendedor')) rolAsignado = 'Vendedor';
             else if (valCorreo.includes('contratista') || valCorreo.includes('maestro')) rolAsignado = 'Contratista';
 
-            localStorage.setItem('usuario_rol', rolAsignado);
-            localStorage.setItem('usuario_nombre', valCorreo.split('@')[0]);
+            localStorage.setItem('usuario-rol', rolAsignado);
+            localStorage.setItem('usuario-nombre', valCorreo.split('@')[0]);
 
             mostrarToast(`¡Bienvenido! Rol: ${rolAsignado}`, '👷‍♂️');
 
@@ -214,23 +231,16 @@ document.addEventListener("DOMContentLoaded", () => {
         formulario.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const nombre = document.querySelector('#nombre');
-            const correo = document.querySelector('#correo');
-            const telefono = document.querySelector('#telefono');
-            const direccion = document.querySelector('#direccion');
-            const clave = document.querySelector('#clave');
-            const clave2 = document.querySelector('#clave2');
-            const tipo = document.querySelector('#tipo');
+            const camposObligatorios = document.querySelectorAll("#form-registro [required]");
 
             let hayError = false;
-            const campos = [nombre, correo, telefono, direccion, clave, clave2];
 
-            campos.forEach(c => {
-                if (!c.value.trim()) {
-                    c.classList.add('campo-error');
+            camposObligatorios.forEach((campo) => {
+                if (!campo.value.trim()) {
+                    campo.classList.add('campo-error');
                     hayError = true;
                 } else {
-                    c.classList.remove('campo-error');
+                    campo.classList.remove('campo-error');
                 }
             });
 
@@ -238,6 +248,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (correo.value.trim() && !regexCorreo.test(correo.value.trim())) {
                 correo.classList.add('campo-error');
                 mostrarToast('El correo no tiene un formato válido', '⚠️');
+                return;
+            }
+
+            if (clave.value.length < 8) {
+                clave.classList.add('campo-error');
+                mostrarToast('La contraseña debe tener al menos 8 caracteres', '⚠️');
                 return;
             }
 
@@ -253,8 +269,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            localStorage.setItem('usuario_rol', tipo.value);
-            localStorage.setItem('usuario_nombre', nombre.value.trim());
+            localStorage.setItem('usuario-rol', tipo.value);
+            localStorage.setItem('usuario-nombre', nombre.value.trim());
 
             mostrarToast('Cuenta creada con éxito', '✅');
             setTimeout(() => { window.location.href = 'index.html'; }, 1500);

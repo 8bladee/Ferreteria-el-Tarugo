@@ -12,7 +12,7 @@
 <body>
 
   <header>
-    <img src="img/logo.png" alt="Logo de la ferreteria" class="logo">
+    <img src="img/logo-2.png" alt="Logo de la ferreteria" class="logo">
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="hamburger-btn">
       <span></span>
@@ -35,20 +35,17 @@
 
     <section class="container">
 
-      <p>Ingresa con tu correo y contraseña. Sirve tanto para clientes, vendedores
-        y el administrador (por ahora es la misma pantalla para todos).</p>
+      <p>Ingresa con tu correo y contraseña.</p>
 
-      <form>
-
+      <form id="form-login">
         <label for="correo">Correo electronico:</label>
-        <input type="text" id="correo" name="correo" placeholder="ejemplo@correo.com">
+        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
 
         <label for="clave">Contraseña:</label>
-        <input type="password" id="clave" name="clave">
+        <input type="password" id="clave" name="clave" required>
 
         <br>
-        <button type="submit">Entrar</button>
-
+        <button type="submit" class="login">Entrar</button>
       </form>
 
       <br>

@@ -75,7 +75,7 @@ header {
     border-radius: 3px;
 }
 
-nav, .nav {
+nav {
     display: none;
     width: 100%;
     flex-direction: column;
@@ -85,8 +85,7 @@ nav, .nav {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-#menu-toggle:checked ~ nav,
-#menu-toggle:checked ~ .nav {
+#menu-toggle:checked ~ nav {
     display: flex;
 }
 
@@ -187,17 +186,17 @@ h2::before {
     box-shadow: var(--shadow-md);
 }
 
-.catalog_img {
+.catalog-img {
     width: 50px;
     height: auto;
 }
 
-.catalog_img:hover {
+.catalog-img:hover {
     transform: scale(1.05);
     transition: all 0.2s ease;
 }
 
-.catalog_img:active {
+.catalog-img:active {
     transform: scale(0.95);
     transition: all 0.1s ease;
 }
@@ -315,11 +314,16 @@ button[disabled] {
 }
 
 button.btn-danger {
-    background-color: #fef2f2;
+    background-color: rgb(255, 102, 128);
     color: var(--danger);
-    border: 1px solid #fee2e2;
+    border: 1px solid #ff1c1c;
     padding: 6px 12px;
     font-size: 12.5px;
+}
+.campo-error {
+    border-color: var(--danger) ;
+    background-color: rgb(226, 3, 41);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
 form {
@@ -476,7 +480,7 @@ footer {
         padding: 32px 36px;
     }
 
-    .catalog_img {
+    .catalog-img {
         width: 80px;
     }
 
@@ -520,7 +524,7 @@ footer {
         margin: 0 auto;
     }
 
-    .catalog_img {
+    .catalog-img {
         width: 100px;
     }
 

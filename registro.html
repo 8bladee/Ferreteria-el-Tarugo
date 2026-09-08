@@ -12,7 +12,7 @@
 <body>
 
   <header>
-    <img src="img/logo.png" alt="Logo de la ferreteria" class="logo">
+    <img src="img/logo-2.png" alt="Logo de la ferreteria" class="logo">
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="hamburger-btn">
       <span></span>
@@ -37,32 +37,33 @@
 
       <p>Registro para clientes particulares y contratistas.</p>
 
-      <form>
+      <form id="form-registro">
 
         <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre">
+        <input type="text" id="nombre" name="nombre" required>
 
         <label for="correo">Correo electronico:</label>
-        <input type="text" id="correo" name="correo">
+        <input type="email" id="correo" name="correo" required>
 
         <label for="telefono">Telefono:</label>
         <input type="text" id="telefono" name="telefono">
 
         <label for="direccion">Direccion:</label>
-        <input type="text" id="direccion" name="direccion">
+        <input type="text" id="direccion" name="direccion" required>
 
         <label for="tipo">Tipo de cliente:</label>
-        <select id="tipo" name="tipo">
+        <select id="tipo" name="tipo" required>
           <option>Particular</option>
           <option>Contratista</option>
         </select>
 
         <label for="clave">Contraseña:</label>
-        <input type="password" id="clave" name="clave">
+        <input type="password" id="clave" name="clave" required>
 
         <label for="clave2">Repetir contraseña:</label>
-        <input type="password" id="clave2" name="clave2">
+        <input type="password" id="clave2" name="clave2" required>
 
+        <br>
         <button type="submit">Registrarme</button>
 
       </form>
