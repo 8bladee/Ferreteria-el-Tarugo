@@ -356,6 +356,12 @@ textarea {
     font-size: 14px;
 }
 
+.cancelar {
+    background-color: var(--danger);
+    color: white;
+    border: 1px solid var(--danger);
+}
+
 iframe {
     width: 100%;
     max-width: 100%;

@@ -31,7 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (oldBadge) oldBadge.remove();
         const oldLinkVendedor = document.querySelector('.nav-link-vendedor');
         if (oldLinkVendedor) oldLinkVendedor.remove();
-
+        if (rolActual === 'Administrador') {
+            const linkAdmin = document.createElement('a');
+            linkAdmin.href = 'Admin.html';
+            linkAdmin.textContent = 'Administrador';
+            linkAdmin.className = 'nav-link-vendedor';
+            nav.appendChild(linkAdmin);
+        }
         if (rolActual === 'Vendedor' || rolActual === 'Administrador') {
             const linkVendedor = document.createElement('a');
             linkVendedor.href = 'Vendedor.html';
