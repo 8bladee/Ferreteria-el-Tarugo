@@ -37,6 +37,7 @@ body {
 
 header {
     background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    background-image: url('../img/fondo-metal.png');
     padding: 12px 16px;
     display: flex;
     flex-wrap: wrap;
